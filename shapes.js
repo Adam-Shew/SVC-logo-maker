@@ -1,7 +1,6 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 
-//Given by Gary
 class Svg {
     constructor() {
         this.version = "1.2";
@@ -54,13 +53,27 @@ class Triangle {
 
 inquirer.prompt([
     {
+        type: 'input',
+        message: 'Enter up to 3 characters to display:',
+        name: 'textContent',
+        validate: function (input) {
+            return input.length <= 3;
+        }
+    },
+    {
+        type: 'input',
+        name: 'textColor',
+        message: 'Enter text color:'
+    },
+    {
       type: 'list',
-      message: "Shape",
-      name: "shape"
+      message: "Select a shape",
+      name: "shape",
+      choices: ['circle','square','triangle']
     },
     {
       type: 'input',
-      message: "Color",
+      message: "Choose  color for the shape",
       name: "shapeColor"
     }
   ]).then(response => {
