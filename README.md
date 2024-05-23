@@ -6,7 +6,7 @@ Your task is to build a Node.js command-line application that takes in user inpu
 
 Because this application won’t be deployed, you’ll need to provide a link to a walkthrough video that demonstrates its functionality and passes all of the tests. You’ll need to submit a link to the video **and** add it to the README of your project.
 
-Refer to the [Video Submission Guide](https://coding-boot-camp.github.io/full-stack/computer-literacy/video-submission-guide) on the Full-Stack Blog for additional guidance on creating a video.
+Refer to the [Video Submission Guide](https://coding-boot-camp.github.io/full-stack/computer-literacy/video-submission-guide) on the Full-Stack Blog for additional guidance on creating a video.x
 
 > **Note**: There is no starter code for this assignment.
 ### User Story
@@ -162,6 +162,10 @@ You are required to submit the following for review:
 * At least one sample SVG file generated using your application.
 
 * The URL of the GitHub repository, with a unique name and a README describing the project.
+
+## Walkthrough Video
+
+You can find a walkthrough here: https://drive.google.com/file/d/14nI74zFyHPI4QCP7ffisfktxbUDR_urS/view?usp=drive_link
 
 ---
 © 2024 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
