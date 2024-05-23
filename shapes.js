@@ -15,8 +15,9 @@ class Svg {
     }
 
     render() {
-        return `<svg version=${this.version} width="300" height="200" xmlns="http://www.w3.org/2000/svg">`
+        return `<svg version="${this.version}" width="${this.width}" height="${this.height}" xmlns="${this.xmlns}">\n${this.content}\n</svg>`;
     }
+    
 }
 
 class Circle {
