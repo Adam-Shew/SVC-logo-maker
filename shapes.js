@@ -25,8 +25,6 @@ class Circle {
     }
 
     render() {
-        //renders the circle tag
-        //similar to above
         return `<circle cx="150" cy="100" r="50" fill="${this.color}" />`;
     }
 }
@@ -76,9 +74,34 @@ inquirer.prompt([
       message: "Choose  color for the shape",
       name: "shapeColor"
     }
+
+
   ]).then(response => {
+    let shape;
+
     if(response.shape === 'circle'){
-      const shape = new Circle(shapeColor)
-    }
-  })
+       shape = new Circle(response.shapeColor)
+    } else if(response.shape === 'square') {
+       shape = new Square(response.shapeColor)
+    } else if(response.shape === 'triangle') {
+       shape = new Triangle(response.shapeColor)
+    } 
+
+    const newSvg = new Svg();
+
+    newSvg.addContent(shape.render());
+
+    const svgRender = newSvg.render();
+
+    fs.writeFile('logo.svg', svgRender, (err) => {
+        if (err) {
+            console.error('Error writing SVG file:', err);
+        } else {
+            console.log('Generated logo.svg');
+        }
+    });
+
+  }).catch(error => {
+    console.error('Error:', error.message);
+});
   
