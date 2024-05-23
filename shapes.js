@@ -21,34 +21,44 @@ class Svg {
 }
 
 class Circle {
-    constructor(color) {
+    constructor(color, text, textColor) {
         this.color = color;
+        this.text = text;
+        this.textColor = textColor;
     }
 
     render() {
-        return `<circle cx="150" cy="100" r="50" fill="${this.color}" />`;
+        return `<circle cx="150" cy="100" r="50" fill="${this.color}" />
+                <text x="150" y="110" text-anchor="middle" fill="${this.textColor}">${this.text}</text>`;
     }
 }
 
 class Square {
-    constructor(color) {
+    constructor(color, text, textColor) {
         this.color = color;
+        this.text = text;
+        this.textColor = textColor;
     }
 
     render() {
-        return `<rect x="100" y="50" width="100" height="100" fill="${this.color}" />`;
+        return `<rect x="100" y="50" width="100" height="100" fill="${this.color}" />
+                <text x="150" y="110" text-anchor="middle" fill="${this.textColor}">${this.text}</text>`;
     }
 }
 
 class Triangle {
-    constructor(color) {
+    constructor(color, text, textColor) {
         this.color = color;
+        this.text = text;
+        this.textColor = textColor;
     }
 
     render() {
-        return `<polygon points="150,50 100,150 200,150" fill="${this.color}" />`;
+        return `<polygon points="150,50 100,150 200,150" fill="${this.color}" />
+                <text x="150" y="110" text-anchor="middle" fill="${this.textColor}">${this.text}</text>`;
     }
 }
+
 
 inquirer.prompt([
     {
@@ -81,11 +91,11 @@ inquirer.prompt([
     let shape;
 
     if(response.shape === 'circle'){
-       shape = new Circle(response.shapeColor)
+       shape = new Circle(response.shapeColor, response.textContent, response.textColor)
     } else if(response.shape === 'square') {
-       shape = new Square(response.shapeColor)
+       shape = new Square(response.shapeColor, response.textContent, response.textColor)
     } else if(response.shape === 'triangle') {
-       shape = new Triangle(response.shapeColor)
+       shape = new Triangle(response.shapeColor, response.textContent, response.textColor)
     } 
 
     const newSvg = new Svg();
